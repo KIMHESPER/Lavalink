@@ -10,6 +10,7 @@ RUN chown -R lavalink:lavalink /opt/Lavalink
 
 USER lavalink
 
-COPY LavalinkServer/build/libs/Lavalink.jar Lavalink.jar
+# 📌 경로 수정 (파일이 현재 디렉토리에 있다고 가정)
+COPY build/libs/Lavalink.jar Lavalink.jar
 
 ENTRYPOINT ["java", "-Djdk.tls.client.protocols=TLSv1.1,TLSv1.2", "-jar", "Lavalink.jar"]
