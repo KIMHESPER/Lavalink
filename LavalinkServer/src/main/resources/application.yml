@@ -1,11 +1,24 @@
-spring:
-  application:
-    version: "1.0"
-    formatted-version: "(v1.0)"
-    name: "Lavalink"
 server:
-  error:
-    include-message: ALWAYS
-    include-binding-errors: ALWAYS
-    include-stacktrace: ON_PARAM
-    include-exception: false
+  # The server IP and port that Lavalink will listen on
+  address: 0.0.0.0
+  port: 2333
+  # Auth token to access Lavalink server
+  password: youshallnotpass
+
+lavaplayer:
+  # Enabling support for all supported audio formats
+  volume: 100
+  youtube:
+    # Enable youtube support
+    youtube-dl: /usr/local/bin/youtube-dl
+
+# Node settings
+node:
+  # The node name
+  name: LavalinkNode
+  # The IP or hostname of the Lavalink instance
+  host: localhost
+  # The port Lavalink will listen on
+  port: 2333
+  # The auth token for the Lavalink instance
+  password: youshallnotpass
