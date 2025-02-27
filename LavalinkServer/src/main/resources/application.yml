@@ -1,24 +1,13 @@
 server:
-  # The server IP and port that Lavalink will listen on
-  address: 0.0.0.0
   port: 2333
-  # Auth token to access Lavalink server
-  password: youshallnotpass
-
-lavaplayer:
-  # Enabling support for all supported audio formats
-  volume: 100
-  youtube:
-    # Enable youtube support
-    youtube-dl: /usr/local/bin/youtube-dl
-
-# Node settings
-node:
-  # The node name
-  name: LavalinkNode
-  # The IP or hostname of the Lavalink instance
-  host: localhost
-  # The port Lavalink will listen on
-  port: 2333
-  # The auth token for the Lavalink instance
-  password: youshallnotpass
+lavalink:
+  server:
+    password: "youshallnotpass"
+    sources:
+      youtube: true
+      soundcloud: true
+      bandcamp: true
+      twitch: true
+      vimeo: true
+      http: true
+      local: false
