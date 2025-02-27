@@ -1,15 +1,14 @@
-FROM eclipse-temurin:18-jre-jammy
+# 기본 Java 이미지 사용
+FROM openjdk:17-jre-slim
 
-# Run as non-root user
-RUN groupadd -g 322 lavalink && \
-    useradd -r -u 322 -g lavalink lavalink
-
+# Lavalink 디렉터리 생성
 WORKDIR /opt/Lavalink
 
-RUN chown -R lavalink:lavalink /opt/Lavalink
+# Lavalink 파일 복사
+COPY LavalinkServer/build/libs/Lavalink.jar /opt/Lavalink/Lavalink.jar
 
-USER lavalink
+# Lavalink 서버의 기본 포트 및 IP 설정
+EXPOSE 2333
 
-COPY LavalinkServer/build/libs/Lavalink.jar Lavalink.jar
-
-ENTRYPOINT ["java", "-Djdk.tls.client.protocols=TLSv1.1,TLSv1.2", "-jar", "Lavalink.jar"]
+# 실행할 명령어
+ENTRYPOINT ["java", "-jar", "/opt/Lavalink/Lavalink.jar"]
