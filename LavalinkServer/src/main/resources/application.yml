@@ -3,9 +3,16 @@ spring:
     version: "1.0"
     formatted-version: "(v1.0)"
     name: "Lavalink"
+
 server:
-  error:
-    include-message: ALWAYS
-    include-binding-errors: ALWAYS
-    include-stacktrace: ON_PARAM
-    include-exception: false
+  port: 8080  # Railway에서 자동으로 포트를 할당하므로 고정하지 않음
+  password: youshallnotpass  # 봇에서 사용할 인증 비밀번호
+
+logging:
+  level: INFO  # 로깅 레벨을 INFO로 설정
+
+error:
+  include-message: ALWAYS  # 오류 메시지는 항상 포함
+  include-binding-errors: ALWAYS  # 바인딩 오류도 항상 포함
+  include-stacktrace: ON_PARAM  # 스택 추적은 파라미터로만 포함
+  include-exception: false  # 예외는 포함하지 않음
